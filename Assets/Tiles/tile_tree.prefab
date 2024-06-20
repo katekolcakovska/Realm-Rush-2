@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 2aafed76c5c990b40855d1d0d6d27674, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2aafed76c5c990b40855d1d0d6d27674, type: 3}
       propertyPath: m_LocalPosition.y
@@ -26,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2aafed76c5c990b40855d1d0d6d27674, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2aafed76c5c990b40855d1d0d6d27674, type: 3}
       propertyPath: m_LocalRotation.y
@@ -59,6 +59,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2aafed76c5c990b40855d1d0d6d27674, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7418590283133841091}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2aafed76c5c990b40855d1d0d6d27674, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3422771754981669486}
   m_SourcePrefab: {fileID: 100100000, guid: 2aafed76c5c990b40855d1d0d6d27674, type: 3}
 --- !u!1 &5400270355588338282 stripped
 GameObject:
@@ -86,3 +89,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 9.999999, y: 10, z: 9.999999}
   m_Center: {x: 0, y: 5, z: 0}
+--- !u!114 &3422771754981669486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5400270355588338282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e667cc87ea8ea0343a54a59075eb03bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerPrefab: {fileID: 4470886943786025939, guid: 15f748a10a8d81e40868cfa64a31b01b, type: 3}
+  isPlaceable: 0

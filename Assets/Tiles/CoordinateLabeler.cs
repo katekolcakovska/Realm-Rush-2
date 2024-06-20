@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-[ExecuteAlways]
+// [ExecuteAlways]
 [RequireComponent(typeof(TextMeshPro))]
 public class CoordinateLabeler : MonoBehaviour
 {
@@ -22,7 +22,7 @@ public class CoordinateLabeler : MonoBehaviour
         label = GetComponent<TextMeshPro>();
         label.enabled = false;
 
-        
+
         DisplayCoordinates();
     }
 
@@ -37,7 +37,7 @@ public class CoordinateLabeler : MonoBehaviour
 
         SetLabelColor();
         ToggleLabels();
-        
+
     }
 
     void ToggleLabels()
@@ -50,11 +50,11 @@ public class CoordinateLabeler : MonoBehaviour
 
     void SetLabelColor()
     {
-        if(gridManager == null) { return; }
+        if (gridManager == null) { return; }
 
         Node node = gridManager.GetNode(coordinates);
 
-        if(node == null) { return; }
+        if (node == null) { return; }
 
         if (!node.isWalkable)
         {
@@ -64,7 +64,7 @@ public class CoordinateLabeler : MonoBehaviour
         {
             label.color = pathColor;
         }
-        else if(node.isExplored)
+        else if (node.isExplored)
         {
             label.color = exploredColor;
         }
@@ -76,8 +76,10 @@ public class CoordinateLabeler : MonoBehaviour
 
     void DisplayCoordinates()
     {
-        coordinates.x = Mathf.RoundToInt(transform.parent.position.x / UnityEditor.EditorSnapSettings.move.x);
-        coordinates.y = Mathf.RoundToInt(transform.parent.position.z / UnityEditor.EditorSnapSettings.move.z);
+        if (gridManager == null) { return; }
+
+        coordinates.x = Mathf.RoundToInt(transform.parent.position.x / gridManager.UnityGridSize);
+        coordinates.y = Mathf.RoundToInt(transform.parent.position.z / gridManager.UnityGridSize);
 
         label.text = coordinates.x + "," + coordinates.y;
     }
